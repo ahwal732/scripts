@@ -15,8 +15,12 @@ echo "... GIT MIRROR : poky ..."
 cd ~/Work/poky
 git pull yocto master
 
-echo "... GIT MIRROR : poky ..."
+echo "... GIT MIRROR : html5-boilerplate ..."
 cd ~/Work/html5-boilerplate
+git pull h5bp master
+
+echo "... GIT MIRROR : ant-build-script ..."
+cd ~/Work/ant-build-script
 git pull h5bp master
 
 echo "... GIT MIRROR : libmodbus ..."
