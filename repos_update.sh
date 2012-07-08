@@ -33,6 +33,11 @@ cd ~/Work/aliroot
 git svn rebase
 git push origin master
 
+echo "... GIT MIRROR : root ..."
+cd ~/Work/root
+git svn rebase
+git push origin master
+
 echo "... GIT MIRROR : linux ..."
 cd ~/Work/linux
 git pull torvalds master
