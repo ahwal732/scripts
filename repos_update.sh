@@ -28,6 +28,19 @@ cd ~/Work/libmodbus
 git pull stephane master
 git push origin master
 
+echo "... GIT MIRROR : tools ..."
+cd ~/Work/tools/truecrack
+git svn rebase
+cd ~/Work/tools/pyrit
+git svn rebase
+cd ~/Work/tools/zxing
+git svn rebase
+cd ~/Work/tools/patator
+git svn rebase
+
+cd ~/Work/tools
+git push origin master
+
 echo "... GIT MIRROR : aliroot ..."
 cd ~/Work/aliroot
 git svn rebase
