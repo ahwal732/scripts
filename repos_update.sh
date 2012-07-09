@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "... GIT MIRROR : brackets ..."
 cd ~/Work/brackets
 git pull adobe master
