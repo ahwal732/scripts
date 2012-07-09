@@ -40,6 +40,12 @@ git svn rebase
 cd ~/Work/tools/patator
 git pull patator master
 
+cd ~/Work/clibrary
+git push origin master
+
+cd ~/Work/scripts
+git push origin master
+
 cd ~/Work/tools
 git push origin master
 
