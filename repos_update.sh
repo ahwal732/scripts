@@ -36,7 +36,7 @@ git svn rebase
 cd ~/Work/tools/zxing
 git svn rebase
 cd ~/Work/tools/patator
-git svn rebase
+git pull patator master
 
 cd ~/Work/tools
 git push origin master
