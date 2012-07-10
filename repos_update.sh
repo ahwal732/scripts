@@ -75,6 +75,18 @@ echo "##########################################"
 cd ~/Work/tools/patator
 git status
 git pull patator master
+echo "##########################################"
+echo "... GIT MIRROR : plowshare ..."
+echo "##########################################"
+cd ~/Work/tools/plowshare
+git status
+git pull plowshare master
+echo "##########################################"
+echo "... GIT MIRROR : homebrew ..."
+echo "##########################################"
+cd ~/Work/tools/homebrew
+git status
+git pull homebrew master
 
 echo "##########################################"
 echo "... GIT MIRROR : tools ..."
