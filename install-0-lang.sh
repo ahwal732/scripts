@@ -1,3 +1,7 @@
+#!/bin/bash
+# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+#
+
 echo '<<< Installation des langues... >>>'
 export LC_ALL="en_US"
 export LC_LANGUAGE="en_US.UTF-8"

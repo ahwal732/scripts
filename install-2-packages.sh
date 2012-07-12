@@ -1,5 +1,6 @@
-#!/bin/bash 
-# Execution script - Benjamin Beurdouche, 2011
+#!/bin/bash
+# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+#
 # Install packages necessary and update distribution of the machine (Unix/Linux)
 # Make sure you configure properly all packages
 

@@ -1,4 +1,6 @@
 #!/bin/bash
+# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+#
 
 echo "##########################################"
 echo "... GIT MIRROR : brackets ..."

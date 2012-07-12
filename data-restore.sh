@@ -1,5 +1,6 @@
-#!/bin/bash 
-# Execution script - Benjamin Beurdouche, 2011
+#!/bin/bash
+# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+#
 # Restore all data backed-up by the backup.sh script on a machine (Unix/Linux/MacOSX)
 # Local for now, make it work for remote locations
 

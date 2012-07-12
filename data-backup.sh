@@ -1,5 +1,6 @@
-#!/bin/bash 
-# Execution script - Benjamin Beurdouche, 2011
+#!/bin/bash
+# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+#
 # Create a backup of important data from a machine which used tree.sh (Unix/Linux/MacOSX)
 
 export BACKUPDIR="/BD"

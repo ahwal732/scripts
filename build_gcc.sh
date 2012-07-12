@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+#
 # You might want to modify the first line to specify your own install location.
 # Please create $GCC_PREFIX folder and execute this script from there as normal user
 # Please chown -R $USER:$USERGROUP parent directory of $GCC_PREFIX (ie here /opt/gnu)

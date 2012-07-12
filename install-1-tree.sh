@@ -1,5 +1,6 @@
-#!/bin/bash 
-# Execution script - Benjamin Beurdouche, 2012
+#!/bin/bash
+# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+#
 # Create all by default directories and set associated rights (Unix/Linux/MacOSX)
 
 #### Variables
