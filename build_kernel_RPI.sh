@@ -1,7 +1,8 @@
 #!/bin/bash
-#
+# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
 #
 # This script permits to build a cross compiled linux kernel for Raspberry Pi from MACOSX
+# See http://elinux.org/RPi_Kernel_Compilation for more information
 
 set -x
 
