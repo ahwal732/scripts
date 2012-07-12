@@ -23,8 +23,8 @@ sudo port install libelf && sudo ln -s /opt/local/include/libelf /usr/include/li
 
 mkdir -p ~/Work/raspberrypi
 cd ~/Work/raspberrypi 
-git clone https://github.com/raspberrypi/linux.git
-git clone https://github.com/beurdouche/clibrary.git 
+git clone --depth=1 https://github.com/raspberrypi/linux.git
+git clone --depth=1 https://github.com/beurdouche/clibrary.git 
 cd clibrary
 sudo mv elf.h /usr/include/elf.h
 sudo mv elftypes.h /usr/include/elftypes.h
