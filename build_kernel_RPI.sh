@@ -5,7 +5,9 @@
 # See http://elinux.org/RPi_Kernel_Compilation for more information
 
 set -x
-export RPI_DIR="~/Work/raspberrypi"
+export RPI_DIR="/opt/raspberrypi"
+export PERSO_USER="bbeurdouche"
+export PERSO_GROUP="staff"
 
 ##################################
 #First lets check we have the good tools for cross-compilation and install libraries
@@ -22,9 +24,11 @@ sudo port install libelf && sudo ln -s /opt/local/include/libelf /usr/include/li
 #Get sources for Raspberry pi kernel
 ##################################
 
-mkdir -p $RPI_DIR
+sudo mkdir -p $RPI_DIR
+sudo chown -R $PERSO_USER:$PERSO_GROUP $RPI_DIR
 cd $RPI_DIR 
 git clone --depth=1 https://github.com/raspberrypi/linux.git
+git clone --depth=1 https://github.com/djwillis/meta-raspberrypi.git
 git clone --depth=1 https://github.com/beurdouche/clibrary.git 
 cd clibrary
 sudo mv elf.h /usr/include/elf.h
@@ -44,8 +48,10 @@ cp arch/arm/configs/bcmrpi_cutdown_defconfig .config
 make ARCH=arm CROSS_COMPILE=/opt/local/bin/arm-none-eabi- menuconfig
 
 make -j5 ARCH=arm CROSS_COMPILE=/opt/local/bin/arm-none-eabi- -k
-cd $RPI_DIR/linux/arch/arm/boot
+cp $RPI_DIR/linux/arch/arm/boot/Image $RPI_DIR/Kernel.img
+cd $RPI_DIR
 echo "The file named 'Image' is your Kernel ! Go flash it =)" 
+
 
 ##################################
 #Flash your new kernel to a device
