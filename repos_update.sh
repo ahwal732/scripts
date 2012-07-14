@@ -95,6 +95,7 @@ echo "... GIT MIRROR : tools ..."
 echo "##########################################"
 cd ~/Work/tools
 git status
+git commit -a -m "update tools"
 git push origin master
 
 echo "##########################################"
