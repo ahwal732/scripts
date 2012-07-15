@@ -24,12 +24,12 @@ cd ~/Work/hello-world
 git status
 git pull leachim6 master
 
-echo "##########################################"
-echo "... GIT MIRROR : poky ..."
-echo "##########################################"
-cd ~/Work/poky
-git status
-git pull yocto master
+#echo "##########################################"
+#echo "... GIT MIRROR : poky ..."
+#echo "##########################################"
+#cd ~/Work/poky
+#git status
+#git pull yocto master
 
 echo "##########################################"
 echo "... GIT MIRROR : html5-boilerplate ..."
