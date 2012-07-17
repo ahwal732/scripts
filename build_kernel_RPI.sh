@@ -8,6 +8,7 @@ set -x
 export RPI_DIR="/opt/raspberrypi"
 export PERSO_USER="bbeurdouche"
 export PERSO_GROUP="staff"
+export TMP_DIR="~/TMP_RPI"
 
 ##################################
 #First lets check we have the good tools for cross-compilation and install libraries
@@ -24,18 +25,19 @@ sudo port install libelf && sudo ln -s /opt/local/include/libelf /usr/include/li
 #Get sources for Raspberry pi kernel
 ##################################
 
-sudo mkdir -p $RPI_DIR
-sudo chown -R $PERSO_USER:$PERSO_GROUP $RPI_DIR
-cd $RPI_DIR 
-git clone --depth=1 https://github.com/raspberrypi/linux.git
-git clone --depth=1 https://github.com/djwillis/meta-raspberrypi.git
-git clone --depth=1 https://github.com/beurdouche/clibrary.git 
-cd clibrary
-sudo mv elf.h /usr/include/elf.h
-sudo mv elftypes.h /usr/include/elftypes.h
+mkdir $TMP_DIR && cd $TMP_DIR
+git clone --depth=1 https://github.com/beurdouche/scripts.git 
+cd scripts && chmod 744 get_sources_RPI.sh
+
+./get_sources_RPI.sh              # Create $RPI_DIR, get everything and cd into it... 
+                                  # NEXT : PASS THE RPI_DIR AS AN OPTION
+
+rm -rf $TMP_DIR
+cd $RPI_DIR
+sudo mv clibrary/elf.h /usr/include/elf.h
+sudo mv clibrary/elftypes.h /usr/include/elftypes.h
 cd .. && rm -rf clibrary
 cd linux
-
 
 ##################################
 #Configure and Build the Kernel
