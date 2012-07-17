@@ -5,11 +5,11 @@
 
 set -x
 export RPI_DIR="/opt/raspberrypi"
-export PERSO_USER="bbeurdouche"
-export PERSO_GROUP="staff"
+export S_USER="bbeurdouche"
+export S_GROUP="staff"
 
 sudo mkdir -p $RPI_DIR
-sudo chown -R $PERSO_USER:$PERSO_GROUP $RPI_DIR
+sudo chown -R $S_USER:$S_GROUP $RPI_DIR
 cd $RPI_DIR
 git clone --depth=1 https://github.com/raspberrypi/linux.git
 git clone --depth=1 https://github.com/djwillis/meta-raspberrypi.git
