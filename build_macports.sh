@@ -15,9 +15,12 @@ cd $MP_DIR
 svn checkout https://svn.macports.org/repository/macports/trunk/base
 
 ### Compile sources and install binaries
-cd $MP_DIR/trunk/base
+cd $MP_DIR/base
 ./configure --enable-readline
 make
 sudo make install
 make distclean
+
+### Update everything
+sudo port -v selfupdate
 

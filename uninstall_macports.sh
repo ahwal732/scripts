@@ -5,6 +5,7 @@
 sudo port -fp uninstall installed
 sudo rm -rf \
     /opt/local \
+    /opt/macports
     /Applications/DarwinPorts \
     /Applications/MacPorts \
     /Library/LaunchDaemons/org.macports.* \
