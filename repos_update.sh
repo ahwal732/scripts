@@ -39,6 +39,22 @@ git status
 git pull h5bp master
 
 echo "##########################################"
+echo "... GIT MIRROR : aliroot ..."
+echo "##########################################"
+cd ~/Work/aliroot
+git status
+git svn rebase
+git push origin master
+
+echo "##########################################"
+echo "... GIT MIRROR : root ..."
+echo "##########################################"
+cd ~/Work/root
+git status
+git svn rebase
+git push origin master
+
+echo "##########################################"
 echo "... GIT MIRROR : ant-build-script ..."
 echo "##########################################"
 cd ~/Work/ant-build-script
@@ -106,26 +122,17 @@ git status
 git push origin master
 
 echo "##########################################"
+echo "... GIT MIRROR : config ..."
+echo "##########################################"
+cd ~/Work/config
+git status
+git push origin master
+
+echo "##########################################"
 echo "... GIT MIRROR : scripts ..."
 echo "##########################################"
 cd ~/Work/scripts
 git status
-git push origin master
-
-echo "##########################################"
-echo "... GIT MIRROR : aliroot ..."
-echo "##########################################"
-cd ~/Work/aliroot
-git status
-git svn rebase
-git push origin master
-
-echo "##########################################"
-echo "... GIT MIRROR : root ..."
-echo "##########################################"
-cd ~/Work/root
-git status
-git svn rebase
 git push origin master
 
 echo "##########################################"
