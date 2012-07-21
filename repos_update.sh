@@ -32,13 +32,6 @@ git pull leachim6 master
 #git pull yocto master
 
 echo "##########################################"
-echo "... GIT MIRROR : html5-boilerplate ..."
-echo "##########################################"
-cd ~/Work/html5-boilerplate
-git status
-git pull h5bp master
-
-echo "##########################################"
 echo "... GIT MIRROR : aliroot ..."
 echo "##########################################"
 cd ~/Work/aliroot
@@ -55,20 +48,24 @@ git svn rebase
 git push origin master
 
 echo "##########################################"
-echo "... GIT MIRROR : ant-build-script ..."
-echo "##########################################"
-cd ~/Work/ant-build-script
-git status
-git pull h5bp master
-
-echo "##########################################"
 echo "... GIT MIRROR : libmodbus ..."
 echo "##########################################"
 cd ~/Work/libmodbus
 git status
 git pull stephane master
 git push origin master
-
+echo "##########################################"
+echo "... GIT MIRROR : ant-build-script ..."
+echo "##########################################"
+cd ~/Work/tools/ant-build-script
+git status
+git pull h5bp master
+echo "##########################################"
+echo "... GIT MIRROR : html5-boilerplate ..."
+echo "##########################################"
+cd ~/Work/tools/html5-boilerplate
+git status
+git pull h5bp master
 echo "##########################################"
 echo "... GIT MIRROR : truecrack ..."
 echo "##########################################"
