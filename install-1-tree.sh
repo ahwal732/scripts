@@ -5,8 +5,8 @@
 
 #### Variables
 export BENJAMIN="$USER"
-export GENERALGROUPE="general"
-#export NEW_USER1=""
+#export GENERALGROUPE="general"
+export GROUP="staff"
 
 
 #### Modeles de dossiers utilisateurs
@@ -47,28 +47,28 @@ echo '<<< Creation des repertoires Utilisateurs >>>'
 #Creation de mes repertoires
 mkdir ~/Safe
 chmod -R 700 ~/Safe
-chown -R $BENJAMIN ~/Safe
+chown -R $BENJAMIN:$GROUP ~/Safe
 mkdir ~/Private
 chmod -R 700 ~/Private
-chown -R $BENJAMIN ~/Private
+chown -R $BENJAMIN:$GROUP ~/Private
 mkdir ~/Work
 chmod -R 755 ~/Work
-chown -R $BENJAMIN ~/Work
+chown -R $BENJAMIN:$GROUP ~/Work
 mkdir ~/Echanges
 chmod -R 775 ~/Echanges
-chown -R $BENJAMIN ~/Echanges
+chown -R $BENJAMIN:$GROUP ~/Echanges
 mkdir ~/Scripts
 chmod -R 754 ~/Scripts
-chown -R $BENJAMIN ~/Scripts
+chown -R $BENJAMIN:$GROUP ~/Scripts
 mkdir ~/Configuration
 chmod -R 754 ~/Configuration
-chown -R $BENJAMIN ~/Configuration
+chown -R $BENJAMIN:$GROUP ~/Configuration
 mkdir ~/Other
 chmod -R 754 ~/Other
-chown -R $BENJAMIN ~/Other
+chown -R $BENJAMIN:$GROUP ~/Other
 mkdir ~/Documentation
 chmod -R 754 ~/Documentation
-chown -R $BENJAMIN ~/Documentation
+chown -R $BENJAMIN:$GROUP ~/Documentation
 
 
 #echo '<<< Mise en place des droits des dossiers >>>'
@@ -94,12 +94,12 @@ echo '<<< Creation des repertoires de Travail >>>'
 #chmod -R 700 /Commun/samba
 #chmod -R 700 /Commun/ftp
 #chown -R $BENJAMIN:$GENERALGROUPE /Commun
-mkdir /opt
-mkdir /Tools
-mkdir /Tools/services
-mkdir /Tools/scripts
-mkdir /Tools/sources
-mkdir /Tools/archives
-mkdir /Tools/packages
-chmod -R 774 /Tools
-#chown -R $BENJAMIN:$GENERALGROUPE /Tools
+sudo mkdir /opt
+sudo mkdir /Tools
+sudo mkdir /Tools/services
+sudo mkdir /Tools/scripts
+sudo mkdir /Tools/sources
+sudo mkdir /Tools/archives
+sudo mkdir /Tools/packages
+sudo chmod -R 774 /Tools
+chown -R $BENJAMIN:$GROUP /Tools
