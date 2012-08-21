@@ -5,8 +5,17 @@
 # Please create $GCC_PREFIX folder and execute this script from there as normal user
 # Please chown -R $USER:$USERGROUP parent directory of $GCC_PREFIX (ie here /opt/gnu)
 
-export GCC_PREFIX="/opt/gnu/gcc4.7"
+set -x
 
+export LUSER="bbeurdouche"
+export LGROUP="staff"
+
+export GNU_PREFIX="/opt/gnu"
+export GCC_PREFIX="${GNU_PREFIX}/gcc"
+
+sudo mkdir $GNU_PREFIX
+sudo chown -R $LUSER:$LGROUP $GNU_PREFIX
+cd $GNU_PREFIX
 
 # Hopefully, you can tweak these as they get out of date, but the download URL's
 # may not be stable to text substitution.
@@ -16,9 +25,6 @@ MPC_VERSION=mpc-0.9
 GCC_VERSION=gcc-4.7.1
 
 # Downloads, builds, then install gmp, mpfr, mpc, and gcc 4.7 to GCC_PREFIX
-
-set -x
-
 export PATH="${GCC_PREFIX}/bin:${PATH}"
 export LD_LIBRARY_PATH="${GCC_PREFIX}/lib:${LD_LIBRARY_PATH}"
 export DYLD_LIBRARY_PATH="${GCC_PREFIX}/lib:${DYLD_LIBRARY_PATH}"
@@ -38,7 +44,7 @@ cd "${GMP_VERSION}/build" || exit
 ../configure --prefix="${GCC_PREFIX}" || exit
 make -j5 || exit
 make check || exit
-make install || exit
+sudo make install || exit
 cd -
 
 if ! test -d "${MPFR_VERSION}"
@@ -55,7 +61,7 @@ cd "${MPFR_VERSION}/build" || exit
 ../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" || exit
 make -j5 || exit
 make check || exit
-make install || exit
+sudo make install || exit
 cd -
 
 if ! test -d "${MPC_VERSION}"
@@ -72,7 +78,7 @@ cd "${MPC_VERSION}/build" || exit
 ../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" || exit
 make -j5 || exit
 make check || exit
-make install || exit
+sudo make install || exit
 cd -
 
 if ! test -d "${GCC_VERSION}"
@@ -89,6 +95,6 @@ cd "${GCC_VERSION}/build" || exit
 ../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}" --enable-checking=release --enable-languages=c,c++,fortran || exit
 make -j5 || exit
 make check || exit
-make install || exit
+sudo make install || exit
 cd -
 
