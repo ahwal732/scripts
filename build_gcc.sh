@@ -5,7 +5,7 @@
 # Please create $GCC_PREFIX folder and execute this script from there as normal user
 # Please chown -R $USER:$USERGROUP parent directory of $GCC_PREFIX (ie here /opt/gnu)
 #
-# brew install binutils autoconf automake autogen gettext cloog
+# brew install binutils autoconf automake libtool autogen gettext cloog
 
 set -x
 
