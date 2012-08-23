@@ -2,10 +2,8 @@
 # Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
 #
 # You might want to modify the first line to specify your own install location.
-# Please create $GCC_PREFIX folder and execute this script from there as normal user
-# Please chown -R $USER:$USERGROUP parent directory of $GCC_PREFIX (ie here /opt/gnu)
 #
-# brew install binutils autoconf automake libtool autogen gettext cloog
+# Prerequisites : binutils autoconf automake libtool autogen gettext cloog
 
 set -x
 
@@ -29,7 +27,6 @@ GCC_VERSION=gcc-4.7.1
 # Downloads, builds, then install gmp, mpfr, mpc, and gcc 4.7 to GCC_PREFIX
 export PATH="${GCC_PREFIX}/bin:${PATH}"
 export LD_LIBRARY_PATH="${GCC_PREFIX}/lib:${LD_LIBRARY_PATH}"
-export LIBRARY_PATH="/usr/local/lib/gcc"
 export DYLD_LIBRARY_PATH="${GCC_PREFIX}/lib:${DYLD_LIBRARY_PATH}"
 
 
@@ -95,7 +92,7 @@ fi
 mkdir "${GCC_VERSION}/build"
 cd "${GCC_VERSION}/build" || exit
 
-../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}" --enable-checking=release --enable-languages=c,c++,fortran || exit
+../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}" --enable-checking=release --enable-languages=c,c++,objc,obj-c++,fortran || exit
 make -j5 || exit
 make check || exit
 sudo make install || exit
