@@ -1,1 +1,5 @@
 nohup ./myprogram > foo.out 2> foo.err < /dev/null &
+
+# Obtenir une IP du reseau
+dhcpcd
+
