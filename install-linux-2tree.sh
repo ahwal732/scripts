@@ -6,29 +6,29 @@
 #### Variables
 export BENJAMIN="$USER"
 #export GENERALGROUPE="general"
-export GROUP="staff"
+export GROUP="general"
 
 
 #### Modeles de dossiers utilisateurs
-#mkdir /etc/skel/Safe
-#chmod -R 700 /etc/skel/Safe
-#mkdir /etc/skel/Private
-#chmod -R 700 /etc/skel/Private
-#mkdir /etc/skel/Work
-#chmod -R 755 /etc/skel/Work
-#mkdir /etc/skel/Echanges
-#chmod -R 775 /etc/skel/Echanges
-#mkdir /etc/skel/Scripts
-#chmod -R 755 /etc/skel/Scripts
-#mkdir /etc/skel/Configuration
-#chmod -R 755 /etc/skel/Configuration
-#mkdir /etc/skel/Other
-#chmod -R 755 /etc/skel/Other
-#mkdir /etc/skel/Documentation
-#chmod -R 755 /etc/skel/Documentation
+mkdir /etc/skel/Safe
+chmod -R 700 /etc/skel/Safe
+mkdir /etc/skel/Private
+chmod -R 700 /etc/skel/Private
+mkdir /etc/skel/Work
+chmod -R 755 /etc/skel/Work
+mkdir /etc/skel/Echanges
+chmod -R 775 /etc/skel/Echanges
+mkdir /etc/skel/Scripts
+chmod -R 755 /etc/skel/Scripts
+mkdir /etc/skel/Configuration
+chmod -R 755 /etc/skel/Configuration
+mkdir /etc/skel/Other
+chmod -R 755 /etc/skel/Other
+mkdir /etc/skel/Documentation
+chmod -R 755 /etc/skel/Documentation
 
 #echo '<<< Ajout des Groupes >>>'
-#addgroup general
+addgroup general
 #addgroup svn
 #addgroup www-data #Preexistant sous Ubuntu 10.04 Server
 
@@ -40,7 +40,7 @@ export GROUP="staff"
 #echo '<<< Associations des Utilisateurs aux Groupes >>>'
 #usermod -a -G svn $BENJAMIN
 #usermod -a -G www-data $BENJAMIN
-#usermod -a -G general $BENJAMIN
+usermod -a -G general $BENJAMIN
 
 
 echo '<<< Creation des repertoires Utilisateurs >>>'
@@ -85,15 +85,15 @@ echo '<<< Creation des repertoires de Travail >>>'
 #mkdir /Svn
 #chmod -R 770 /Svn
 #chown -R www-data:svn /Svn
-#mkdir /Commun
-#mkdir /Commun/safe
-#mkdir /Commun/samba
-#mkdir /Commun/ftp
-#chmod -R 774 /Commun
-#chmod -R 700 /Commun/safe
-#chmod -R 700 /Commun/samba
-#chmod -R 700 /Commun/ftp
-#chown -R $BENJAMIN:$GENERALGROUPE /Commun
+sudo mkdir /Commun
+sudo mkdir /Commun/safe
+sudo mkdir /Commun/samba
+sudo mkdir /Commun/ftp
+sudo chmod -R 774 /Commun
+sudo chmod -R 700 /Commun/safe
+sudo chmod -R 700 /Commun/samba
+sudo chmod -R 700 /Commun/ftp
+sudo chown -R $BENJAMIN:$GENERALGROUPE /Commun
 sudo mkdir /opt
 sudo mkdir /Tools
 sudo mkdir /Tools/services
@@ -102,4 +102,4 @@ sudo mkdir /Tools/sources
 sudo mkdir /Tools/archives
 sudo mkdir /Tools/packages
 sudo chmod -R 774 /Tools
-chown -R $BENJAMIN:$GROUP /Tools
+sudo chown -R $BENJAMIN:$GROUP /Tools
