@@ -3,7 +3,7 @@
 #
 # You might want to modify the first line to specify your own install location.
 #
-# Prerequisites : binutils autoconf automake libtool autogen gettext cloog
+# Prerequisites : binutils autoconf automake libtool autogen gettext cloog dejagnu
 
 set -x
 
@@ -94,7 +94,7 @@ cd "${GCC_VERSION}/build" || exit
 
 ../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}" --enable-checking=release --enable-languages=c,c++,objc,obj-c++,fortran || exit
 make -j5 || exit
-make check || exit
+make -k check || exit
 sudo make install || exit
 cd -
 

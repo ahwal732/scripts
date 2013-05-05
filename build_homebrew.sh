@@ -3,5 +3,5 @@
 #
 # Installation de Homebrew
 
-ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
