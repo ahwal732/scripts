@@ -22,7 +22,7 @@ cd $GNU_PREFIX
 GMP_VERSION=gmp-5.1.1
 MPFR_VERSION=mpfr-3.1.2
 MPC_VERSION=mpc-1.0.1
-GCC_VERSION=gcc-4.8.0
+GCC_VERSION=gcc-4.8.1
 
 # Downloads, builds, then install gmp, mpfr, mpc, and gcc 4.7 to GCC_PREFIX
 export PATH="${GCC_PREFIX}/bin:${PATH}"
