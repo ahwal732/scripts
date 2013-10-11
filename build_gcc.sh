@@ -28,9 +28,9 @@ cd $GNU_PREFIX
 
 # Hopefully, you can tweak these as they get out of date, but the download URL's
 # may not be stable to text substitution.
-GMP_VERSION=gmp-4.3.2
-MPFR_VERSION=mpfr-2.4.2
-MPC_VERSION=mpc-0.8.1
+GMP_VERSION=gmp-5.1.1
+MPFR_VERSION=mpfr-3.1.2
+MPC_VERSION=mpc-1.0.1
 ISL_VERSION=isl-0.11.1
 CLOOG_VERSION=cloog-0.18.0
 GCC_VERSION=gcc-4.8.1
@@ -48,7 +48,7 @@ if ! test -d "${GMP_VERSION}"
 then
     if ! test -f "${GMP_VERSION}.tar.bz2"
     then
-        wget "ftp://gcc.gnu.org/pub/gcc/infrastructure/${GMP_VERSION}.tar.bz2" || exit
+        wget "ftp://ftp.gmplib.org/pub/$GMP_VERSION/${GMP_VERSION}.tar.bz2" || exit
         tar xfjv "${GMP_VERSION}.tar.bz2" || exit
     fi
 fi
@@ -58,7 +58,7 @@ cd "${GMP_VERSION}/build" || exit
 ../configure --prefix="${GCC_PREFIX}" || exit
 make -j5 || exit
 # make check || exit
-sudo make install || exit
+make install || exit
 cd -
 
 #
@@ -67,10 +67,10 @@ cd -
 
 if ! test -d "${MPFR_VERSION}"
 then
-    if ! test -f "${MPFR_VERSION}.tar.bz2"
+    if ! test -f "${MPFR_VERSION}.tar.gz"
     then
-        wget "ftp://gcc.gnu.org/pub/gcc/infrastructure/${MPFR_VERSION}.tar.bz2" || exit
-        tar xfvz "${MPFR_VERSION}.tar.bz2" || exit
+        wget "http://www.mpfr.org/mpfr-current/${MPFR_VERSION}.tar.gz" || exit
+        tar xfvz "${MPFR_VERSION}.tar.gz" || exit
     fi
 fi
 mkdir "${MPFR_VERSION}/build"
@@ -79,7 +79,7 @@ cd "${MPFR_VERSION}/build" || exit
 ../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" || exit
 make -j5 || exit
 # make check || exit
-sudo make install || exit
+make install || exit
 cd -
 
 #
@@ -90,7 +90,7 @@ if ! test -d "${MPC_VERSION}"
 then
     if ! test -f "${MPC_VERSION}.tar.gz"
     then
-        wget "ftp://gcc.gnu.org/pub/gcc/infrastructure/${MPC_VERSION}.tar.gz" || exit
+        wget "http://www.multiprecision.org/mpc/download/${MPC_VERSION}.tar.gz" || exit
         tar xfvz "${MPC_VERSION}.tar.gz" || exit
     fi
 fi
@@ -100,7 +100,7 @@ cd "${MPC_VERSION}/build" || exit
 ../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" || exit
 make -j5 || exit
 # make check || exit
-sudo make install || exit
+make install || exit
 cd -
 
 #
@@ -118,10 +118,10 @@ fi
 mkdir "${ISL_VERSION}/build"
 cd "${ISL_VERSION}/build" || exit
 
-../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}"|| exit
+../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}" || exit
 make -j5 || exit
 # make check || exit
-sudo make install || exit
+make install || exit
 cd -
 
 #
@@ -139,10 +139,10 @@ fi
 mkdir "${CLOOG_VERSION}/build"
 cd "${CLOOG_VERSION}/build" || exit
 
-../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}" --with-isl="${GCC_PREFIX}"|| exit
+../configure --prefix="${GCC_PREFIX}" --with-bits=gmp --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}" --with-isl="${GCC_PREFIX}"|| exit
 make -j5 || exit
 # make check || exit
-sudo make install || exit
+make install || exit
 cd -
 
 #
@@ -163,6 +163,6 @@ cd "${GCC_VERSION}/build" || exit
 ../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}" --with-isl="${GCC_PREFIX}" --with-cloog="${GCC_PREFIX}" --enable-checking=release --enable-languages=c,c++,objc,obj-c++,fortran || exit
 make -j5 || exit
 # make -k check || exit
-sudo make install || exit
+make install || exit
 cd -
 
