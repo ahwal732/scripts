@@ -3,7 +3,7 @@
 #
 # You might want to modify the first line to specify your own install location.
 #
-# Prerequisites : binutils autoconf automake libtool autogen gettext cloog
+# Prerequisites : binutils autoconf automake libtool autogen gettext cloog dejagnu
 
 set -x
 
@@ -19,10 +19,10 @@ cd $GNU_PREFIX
 
 # Hopefully, you can tweak these as they get out of date, but the download URL's
 # may not be stable to text substitution.
-GMP_VERSION=gmp-5.0.5
-MPFR_VERSION=mpfr-3.1.1
-MPC_VERSION=mpc-0.9
-GCC_VERSION=gcc-4.7.1
+GMP_VERSION=gmp-5.1.1
+MPFR_VERSION=mpfr-3.1.2
+MPC_VERSION=mpc-1.0.1
+GCC_VERSION=gcc-4.8.1
 
 # Downloads, builds, then install gmp, mpfr, mpc, and gcc 4.7 to GCC_PREFIX
 export PATH="${GCC_PREFIX}/bin:${PATH}"
@@ -94,7 +94,7 @@ cd "${GCC_VERSION}/build" || exit
 
 ../configure --prefix="${GCC_PREFIX}" --with-gmp="${GCC_PREFIX}" --with-mpfr="${GCC_PREFIX}" --with-mpc="${GCC_PREFIX}" --enable-checking=release --enable-languages=c,c++,objc,obj-c++,fortran || exit
 make -j5 || exit
-make check || exit
+make -k check || exit
 sudo make install || exit
 cd -
 
