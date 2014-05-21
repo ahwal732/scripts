@@ -112,7 +112,7 @@ then
     if ! test -f "${ISL_VERSION}.tar.bz2"
     then
         wget "ftp://gcc.gnu.org/pub/gcc/infrastructure/${ISL_VERSION}.tar.bz2" || exit
-        tar xfvz "${ISL_VERSION}.tar.bz2" || exit
+        tar xfvj "${ISL_VERSION}.tar.bz2" || exit
     fi
 fi
 mkdir "${ISL_VERSION}/build"
