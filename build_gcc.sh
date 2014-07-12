@@ -8,12 +8,6 @@
 # Prerequisites : binutils autoconf automake libtool autogen gettext cloog dejagnu
 
 
-
-####
-# NOTE : You do not need to build this version of GCC to use TTime, you can use an older package
-# An up-to-date version of this script is available at http://github.com/beurdouche/scripts/build_gcc.sh
-####
-
 set -x
 
 export LUSER="bbeurdouche"
