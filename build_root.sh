@@ -2,7 +2,7 @@
 #
 # ROOT FRAMEWORK INSTALLATION SCRIPT
 #
-# Copyright (c) 2013 Benjamin Beurdouche. All rights reserved.
+# Copyright (c) 2014 Benjamin Beurdouche. All rights reserved.
 # You might want to modify the first line to specify your own install location.
 
 
@@ -30,7 +30,7 @@ sudo mv root ..
 
 # Checkout the last release of ROOT (check http://root.cern.ch for more informations)
 cd /opt/root
-git checkout -b v5-34-09
+git checkout -b v5-34-19
 
 # Run the configuration step
 ./configure
