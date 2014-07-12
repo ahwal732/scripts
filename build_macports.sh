@@ -5,12 +5,11 @@
 
 set -x
 export MP_DIR="/opt/macports"
-export LUSER="bbeurdouche"
 export LGROUP="staff"
 
 ### Checking out sources
 sudo mkdir -p $MP_DIR
-sudo chown -R $LUSER:$LGROUP $MP_DIR
+sudo chown -R $USER:$LGROUP $MP_DIR
 cd $MP_DIR
 svn checkout https://svn.macports.org/repository/macports/trunk/base
 
