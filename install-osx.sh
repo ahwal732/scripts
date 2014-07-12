@@ -1,26 +1,20 @@
 #!/bin/bash
-# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+# Copyright (c) 2014 Benjamin Beurdouche. All rights reserved.
 #
 # Create all by default directories and set associated rights (Unix/Linux/MacOSX)
 
 #### Variables
-export BENJAMIN="bbeurdouche"
-export GROUP="staff"
+export LGROUP="staff"
 
-echo '<<< Creation des repertoires de Travail >>>'
+echo '### Creation des repertoires de Travail'
 sudo mkdir /Ressources
-sudo mkdir /Ressources/services
 sudo mkdir /Ressources/scripts
-sudo mkdir /Ressources/sources
 sudo mkdir /Ressources/archives
-sudo mkdir /Ressources/packages
-sudo mkdir /Ressources/config
 sudo mkdir /Ressources/distributions
-sudo mkdir /Ressources/documentation
-sudo mkdir /Ressources/libraries
+sudo mkdir /Ressources/packages
 sudo mkdir /Ressources/tools
+sudo mkdir /Ressources/virtual
 sudo chmod -R 774 /Ressources
-sudo chown -R $BENJAMIN:$GROUP /Ressources
+sudo chown -R $USER:$LGROUP /Ressources
 sudo mkdir /Temporary
-sudo chown -R $BENJAMIN:$GROUP /Temporary
-
+sudo chown -R $USER:$LGROUP /Temporary

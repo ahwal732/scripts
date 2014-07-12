@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+# Copyright (c) 2014 Benjamin Beurdouche. All rights reserved.
 #
 # Install packages necessary and update distribution of the machine (Unix/Linux)
 # Make sure you configure properly all packages
@@ -21,8 +21,7 @@ sudo apt-get update
 sudo apt-get install gcc g++ subversion git-core build-essential make cmake automake autoconf libtool 
 sudo apt-get install libltdl-dev apache2 libapache2-svn php5 mysql-server php5-mysql phpmyadmin 
 #apt-get nmap trac python-setuptools libapache2-mod-python enscript libgnutls-dev libglib2.0-dev libxml2-dev libreadline5-dev
-#apt-get install webmin
-#apt-get install samba
+#apt-get install webmin samba
 
 #echo '+ Creating symlinks'
 sudo ln -s /usr/share/phpmyadmin /var/www

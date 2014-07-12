@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+# Copyright (c) 2014 Benjamin Beurdouche. All rights reserved.
 #
 # Installation de Homebrew
 

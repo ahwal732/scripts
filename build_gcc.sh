@@ -2,7 +2,7 @@
 #
 # GNU GCC COMPILER INSTALLATION SCRIPT
 #
-# Copyright (c) 2013 Benjamin Beurdouche. All rights reserved.
+# Copyright (c) 2014 Benjamin Beurdouche. All rights reserved.
 #
 # You might want to modify the first line to specify your own install location.
 # Prerequisites : binutils autoconf automake libtool autogen gettext cloog dejagnu
@@ -10,14 +10,13 @@
 
 set -x
 
-export LUSER="bbeurdouche"
 export LGROUP="staff"
 
 export GNU_PREFIX="/opt/gnu"
 export GCC_PREFIX="${GNU_PREFIX}/gcc"
 
 sudo mkdir $GNU_PREFIX
-sudo chown -R $LUSER:$LGROUP $GNU_PREFIX
+sudo chown -R $USER:$LGROUP $GNU_PREFIX
 cd $GNU_PREFIX
 
 # Hopefully, you can tweak these as they get out of date, but the download URL's

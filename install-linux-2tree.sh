@@ -1,12 +1,11 @@
 #!/bin/bash
-# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+# Copyright (c) 2014 Benjamin Beurdouche. All rights reserved.
 #
 # Create all by default directories and set associated rights (Unix/Linux/MacOSX)
 
 #### Variables
-export BENJAMIN="$USER"
+export LGROUP="general"
 #export GENERALGROUPE="general"
-export GROUP="general"
 
 
 #### Modeles de dossiers utilisateurs
@@ -38,37 +37,37 @@ addgroup general
 
 
 #echo '<<< Associations des Utilisateurs aux Groupes >>>'
-#usermod -a -G svn $BENJAMIN
-#usermod -a -G www-data $BENJAMIN
-usermod -a -G general $BENJAMIN
+#usermod -a -G svn $USER
+#usermod -a -G www-data $USER
+usermod -a -G general $USER
 
 
 echo '<<< Creation des repertoires Utilisateurs >>>'
 #Creation de mes repertoires
 mkdir ~/Safe
 chmod -R 700 ~/Safe
-chown -R $BENJAMIN:$GROUP ~/Safe
+chown -R $USER:$LGROUP ~/Safe
 mkdir ~/Private
 chmod -R 700 ~/Private
-chown -R $BENJAMIN:$GROUP ~/Private
+chown -R $USER:$LGROUP ~/Private
 mkdir ~/Work
 chmod -R 755 ~/Work
-chown -R $BENJAMIN:$GROUP ~/Work
+chown -R $USER:$LGROUP ~/Work
 mkdir ~/Echanges
 chmod -R 775 ~/Echanges
-chown -R $BENJAMIN:$GROUP ~/Echanges
+chown -R $USER:$LGROUP ~/Echanges
 mkdir ~/Scripts
 chmod -R 754 ~/Scripts
-chown -R $BENJAMIN:$GROUP ~/Scripts
+chown -R $USER:$LGROUP ~/Scripts
 mkdir ~/Configuration
 chmod -R 754 ~/Configuration
-chown -R $BENJAMIN:$GROUP ~/Configuration
+chown -R $USER:$LGROUP ~/Configuration
 mkdir ~/Other
 chmod -R 754 ~/Other
-chown -R $BENJAMIN:$GROUP ~/Other
+chown -R $USER:$LGROUP ~/Other
 mkdir ~/Documentation
 chmod -R 754 ~/Documentation
-chown -R $BENJAMIN:$GROUP ~/Documentation
+chown -R $USER:$LGROUP ~/Documentation
 
 
 #echo '<<< Mise en place des droits des dossiers >>>'
@@ -93,7 +92,7 @@ sudo chmod -R 774 /Commun
 sudo chmod -R 700 /Commun/safe
 sudo chmod -R 700 /Commun/samba
 sudo chmod -R 700 /Commun/ftp
-sudo chown -R $BENJAMIN:$GENERALGROUPE /Commun
+sudo chown -R $USER:$GENERALGROUPE /Commun
 sudo mkdir /opt
 sudo mkdir /Tools
 sudo mkdir /Tools/services
@@ -102,4 +101,4 @@ sudo mkdir /Tools/sources
 sudo mkdir /Tools/archives
 sudo mkdir /Tools/packages
 sudo chmod -R 774 /Tools
-sudo chown -R $BENJAMIN:$GROUP /Tools
+sudo chown -R $USER:$LGROUP /Tools

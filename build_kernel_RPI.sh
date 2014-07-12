@@ -1,13 +1,12 @@
 #!/bin/bash
-# Copyright (c) 2012 Benjamin Beurdouche. All rights reserved.
+# Copyright (c) 2014 Benjamin Beurdouche. All rights reserved.
 #
 # This script permits to build a cross compiled linux kernel for Raspberry Pi from MACOSX
 # See http://elinux.org/RPi_Kernel_Compilation for more information
 
 set -x
 export RPI_DIR="/opt/raspberrypi"
-export S_USER="bbeurdouche"
-export S_GROUP="staff"
+export LGROUP="staff"
 export TMP_DIR="/TMP_RPI"
 
 ##################################
@@ -26,7 +25,7 @@ sudo port install libelf && sudo ln -s /opt/local/include/libelf /usr/include/li
 ##################################
 
 sudo mkdir $TMP_DIR
-sudo chown -R $S_USER:$S_GROUP $TMP_DIR
+sudo chown -R $USER:$LGROUP $TMP_DIR
 cd $TMP_DIR
 git clone --depth=1 https://github.com/beurdouche/scripts.git 
 cd scripts && chmod 744 get_sources_RPI.sh

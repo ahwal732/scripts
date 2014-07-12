@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2013 Benjamin Beurdouche. All rights reserved.
+# Copyright (c) 2014 Benjamin Beurdouche. All rights reserved.
 #
 # You might want to modify the script to specify your own install location.
 
