@@ -4,8 +4,8 @@
 # You might want to modify the script to specify your own install location.
 
 sudo rm /usr/bin/cc
-sudo ln -s /opt/gnu/gcc/bin/gcc /usr/bin/cc
+sudo ln -s /opt/local/bin/gcc /usr/bin/cc
 
 sudo rm /usr/bin/c++
-sudo ln -s /opt/gnu/gcc/bin/g++ /usr/bin/c++
+sudo ln -s /opt/local/bin/g++ /usr/bin/c++
 
